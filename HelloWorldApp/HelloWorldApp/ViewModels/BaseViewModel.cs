@@ -13,6 +13,7 @@ namespace HelloWorldApp.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IEntradaDataStore<Entrada> EntradaDataStore => DependencyService.Get<IEntradaDataStore<Entrada>>() ?? new EntradaDataStore();
 
         bool isBusy = false;
         public bool IsBusy
